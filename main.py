@@ -2,28 +2,38 @@ import pygame as pg
 import config
 import movement
 import object
-
-objects={object.pinxiang(1,2,config.object_width,config.object_height,50,50)}
-
+import sys
+instructs=['123','Merge的代價為兩者體重乘積','Merge的代價為兩者體重加起來','Merge的代價為兩者體重較小的','Merge的代價為兩者體重較大的','Merge的代價為兩者體重差距']
 def update(screen):
     screen.fill(config.background_color)
+    font = pg.font.SysFont("microsoftjhenghei", 32)
+    text = font.render(instructs[mode], True, (0,0,0), (255,255,255))
+    screen.blit(text, (250,20))
     for i in objects:
         i.draw(screen)
+    
     pg.display.flip()
 
 
-def main():
+def main(argv):
     pg.init()
     screen = pg.display.set_mode((config.width, config.height))
     pg.display.set_caption('我要跟你 merge')
-    update(screen)
-    
+    global mode
+    mode=int(argv[0])
+    with open("testdata/"+str(mode)+".txt",'r') as f:
+        global objects
+        objects=[]
+        for i,j in enumerate(f.read().split(' ')):
+            objects.append(object.pinxiang(i,int(j),config.object_width,config.object_height,10+(config.object_width+10)*i,100,mode))
     run = True
+    update(screen)
     while run:
         for event in pg.event.get():
             #print(event)
             if event.type == pg.QUIT:
                 run = False
+        #這裡寫滑鼠點選角色的部分
         '''
         for event in pg.event.get():
             #print(event)
@@ -50,4 +60,4 @@ def main():
     pg.quit()
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
