@@ -10,7 +10,10 @@ class pinxiang():
         self.y=y
         self.mode=mode
         self.selected=False
+        self.display=True
     def draw(self,screen):
+        if not self.display:
+            return
         if self.selected:
             pg.draw.rect(screen,(255,0,0),[self.x,self.y,self.width,self.height],3)
         else:
