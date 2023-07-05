@@ -85,7 +85,7 @@ def main(argv):
             text = font.render("恭喜你完成了！", True, (0,0,0), (255,255,255))
             screen.blit(text, (100,400))
             pg.display.flip()
-        elif (pg.time.get_ticks()-start_ticks)//1000>=3:
+        elif (pg.time.get_ticks()-start_ticks)//1000>=120:
             font = pg.font.SysFont("microsoftjhenghei", 128)
             text = font.render("        時間到！        ", True, (0,0,0), (255,255,255))
             screen.blit(text, (0,250))
