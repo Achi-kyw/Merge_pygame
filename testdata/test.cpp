@@ -49,7 +49,12 @@ void recur(int len, int sum, int arr[10], pir prog[10])
         }
         input[ind] = arr[com[i].first] + arr[com[i].second];
         prog[10-len].first = arr[com[i].first], prog[10-len].second = arr[com[i].second];
-        recur(len-1, sum + max(arr[com[i].first],arr[com[i].second]) - min(arr[com[i].first],arr[com[i].second]), input, prog);
+
+        //recur(len-1, sum + arr[com[i].first]*arr[com[i].second], input, prog);//1 
+        //recur(len-1, sum + arr[com[i].first]+arr[com[i].second], input, prog);//2 
+        //recur(len-1, sum + min(arr[com[i].first],arr[com[i].second]), input, prog);//3 
+        //recur(len-1, sum + max(arr[com[i].first],arr[com[i].second]), input, prog);//4 
+        recur(len-1, sum + max(arr[com[i].first],arr[com[i].second]) - min(arr[com[i].first],arr[com[i].second]), input, prog);//5 
     }
     return;
 }
