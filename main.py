@@ -11,7 +11,7 @@ def update(screen):
     font = pg.font.SysFont("microsoftjhenghei", 32)
     text = font.render(instructs[mode], True, (0,0,0), (255,255,255))
     screen.blit(text, (250,20))
-    text = font.render("總花費："+str(cost)+"   ", True, (0,0,0), (255,255,255))
+    text = font.render("總代價："+str(cost)+"   ", True, (0,0,0), (255,255,255))
     screen.blit(text, (250,config.height-50))
     text = font.render("時間：", True, (0,0,0), (255,255,255))
     screen.blit(text, (800,20))
@@ -76,7 +76,7 @@ def main(argv):
                                 tmp_cost=movement.merge(objects,selected_id,mode)
                                 cost+=tmp_cost
                                 info[0]="體重為"+str(a)+"的品庠對體重為"+str(b)+"的品庠說：「我要跟你merge」                "
-                                info[1]="付出的代價："+str(tmp_cost)+"                 "
+                                info[1]="這次merge付出的代價："+str(tmp_cost)+"                 "
                                 selected_id.clear()
                                 break
         #pg.time.wait(10)
