@@ -75,7 +75,7 @@ def main(argv):
                                         b=i.weight
                                 tmp_cost=movement.merge(objects,selected_id,mode)
                                 cost+=tmp_cost
-                                info[0]="體重為"+str(a)+"的品庠對體重為"+str(b)+"的品庠說：「我要跟你 merge」                "
+                                info[0]="體重為"+str(a)+"的品庠對體重為"+str(b)+"的品庠說：「我要跟你merge」                "
                                 info[1]="付出的代價："+str(tmp_cost)+"                 "
                                 selected_id.clear()
                                 break
