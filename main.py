@@ -65,7 +65,6 @@ def main(argv):
                         else:
                             i.selected=True
                             selected_id.append(i.id)
-                            print(selected_id)
                             selected_num+=1
                             if selected_num==2:
                                 selected_num=0

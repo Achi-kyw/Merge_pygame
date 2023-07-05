@@ -1,4 +1,4 @@
-# 合併動作在這裡處理
+from math import gcd
 def merge(objects,selected_id,mode):
     selected_id[0],selected_id[1]=selected_id[1],selected_id[0]
     for t,i in enumerate(objects):
@@ -9,7 +9,9 @@ def merge(objects,selected_id,mode):
             i.display=False
             b=i
             pop_item=t
-    if mode==1:
+    if mode==0:
+        cost=gcd(a.weight,b.weight)
+    elif mode==1:
         cost=a.weight*b.weight
     elif mode==2:
         cost=a.weight+b.weight
