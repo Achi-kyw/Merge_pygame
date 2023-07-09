@@ -20,7 +20,7 @@ def update(screen):
     text = font.render(info[1], True, (0,0,0), (255,255,255))
     screen.blit(text, (100,350))
     font = pg.font.SysFont("couriernew", 32)
-    text = font.render(str(120-(pg.time.get_ticks()-start_ticks)//1000).rjust(3), True, (0,0,0), (255,255,255))
+    text = font.render(str(150-(pg.time.get_ticks()-start_ticks)//1000).rjust(3), True, (0,0,0), (255,255,255))
     screen.blit(text, (890,27))
     for i in objects:
         i.draw(screen)
@@ -85,7 +85,7 @@ def main(argv):
             text = font.render("恭喜你完成了！", True, (0,0,0), (255,255,255))
             screen.blit(text, (100,400))
             pg.display.flip()
-        elif (pg.time.get_ticks()-start_ticks)//1000>=120:
+        elif (pg.time.get_ticks()-start_ticks)//1000>=150:
             font = pg.font.SysFont("microsoftjhenghei", 128)
             text = font.render("        時間到！        ", True, (0,0,0), (255,255,255))
             screen.blit(text, (0,250))
@@ -96,7 +96,7 @@ def main(argv):
             text = font.render(str(0).rjust(3), True, (0,0,0), (255,255,255))
             screen.blit(text, (890,27))
             pg.display.flip()
-        elif (pg.time.get_ticks()-start_ticks)//1000<=120:
+        elif (pg.time.get_ticks()-start_ticks)//1000<=150:
             update(screen)
     pg.quit()
 
