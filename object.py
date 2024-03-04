@@ -1,6 +1,6 @@
 import pygame as pg
 from pygame.locals import *
-class pinxiang():
+class character():
     def __init__(self, id, weight, width, height, x, y, mode):
         self.id=id
         self.weight=weight
@@ -14,7 +14,7 @@ class pinxiang():
     def draw(self,screen):
         if not self.display:
             return
-        screen.blit(pg.image.load('image/pinxiang_100.jpg'), (self.x,self.y))
+        screen.blit(pg.image.load('image/Slime_100.png'), (self.x,self.y))
         pg.draw.rect(screen,(255*int(self.selected),0,0),[self.x,self.y,self.width,self.height],3)
         if self.weight<10:
             font = pg.font.SysFont("couriernew", 50)
