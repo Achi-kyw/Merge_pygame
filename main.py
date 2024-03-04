@@ -40,7 +40,7 @@ def main(argv):
     pg.display.set_caption('Slime Merge Game')
     print(argv)
     if argv ==[] or argv[0] not in ['0','1','2','3','4','5']:
-        mode=random.randint(1,5)
+        mode=random.randint(2,5)
     else:
         mode=int(argv[0])
     with open("testdata/"+str(mode)+".txt",'r') as f:
